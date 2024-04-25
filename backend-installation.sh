@@ -49,7 +49,7 @@ then
     useradd expense &>>$LOGFILE
     VALIDATE $? "Creating expense user"
 else
-    echo -e "Expense user alreadt created....$Y SKIPPING $N"
+    echo -e "Expense user already created....$Y SKIPPING $N"
 fi
 
 mkdir -p /app

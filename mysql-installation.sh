@@ -26,6 +26,14 @@ fi
 
 }
 
+if [ $USERID -ne 0 ] #checking if the USERID is 0 or not, if 0 it is a SUPER-USER, will have access for installation and exit status is 0
+then
+    echo "please run this script with root access."
+    exit 1 #manually exit if there is a error.
+else
+    echo "You are a Super User"
+fi
+
 dnf install mysql-server -y &>>$LOGFILE
 VALIDATE $? "Installing MySQL Server"
 
